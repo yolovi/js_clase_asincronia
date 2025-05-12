@@ -1,3 +1,5 @@
+/*
+//ASINCRONÍA & FETCH
 function pelarPatatas() {
     console.log("Pelar y cortar las patatas");
 }
@@ -69,3 +71,39 @@ fetch("https://jsonplaceholder.typicode.com/users")
   .then((res) => res.json()) //Es como JSON.parse() necesitamos el método json() con .then
   .then((users) => console.log(users)) //luego decirle qué hacer con la res transformada
   .catch((err) => console.error(err)); //o con error si es rechazada
+*/
+
+//-------------------------------
+
+//ASINCRONÍA & AXIOS
+
+//CRUD CON AXIOS
+
+//GET
+axios.get("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => console.log(res))
+    .catch((err) => console.error(err));
+
+//POST
+axios.post("https://jsonplaceholder.typicode.com/posts", {
+    title: "New Post",
+    body: "Body title",
+}
+)
+    .then((res) => console.log(res))
+    .catch((err) => console.error(err));
+
+//PUT    
+axios.put("https://jsonplaceholder.typicode.com/posts/1", {
+    title: "Post updated",
+    body: "Body updated",
+}
+)
+    .then((res) => console.log(res))
+    .catch((err) => console.error(err));
+
+//DELETE
+axios.delete('https://jsonplaceholder.typicode.com/posts/1')
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+
